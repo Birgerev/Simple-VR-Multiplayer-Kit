@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
 
-public class OnlyWithAuthorityComponents : MonoBehaviour
+public class OnlyAuthorityComponents : MonoBehaviour
 {
-    public List<Behaviour> components;
+    public List<Behaviour> authorityComponents;
     private NetworkIdentity _identity;
 
     // Start is called before the first frame update
@@ -18,7 +18,8 @@ public class OnlyWithAuthorityComponents : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach (var component in components)
+        //Every frame, enable/disable components depending on whether client has authority
+        foreach (var component in authorityComponents)
         {
             component.enabled = _identity.isOwned;
         }
