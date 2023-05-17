@@ -10,6 +10,8 @@ public class XRMultiplayerInteractor : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (!isOwned)
+            return;
         RegisterInteractionListeners();
     }
     
