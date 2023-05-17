@@ -20,7 +20,7 @@ public class OnlyWithAuthorityComponents : MonoBehaviour
     {
         foreach (var component in components)
         {
-            component.enabled = _identity.hasAuthority;
+            component.enabled = _identity.isOwned;
         }
     }
 }
