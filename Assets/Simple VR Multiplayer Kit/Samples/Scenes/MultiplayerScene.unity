@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offsetX: 830
-  offsetY: 360
+  offsetY: 225
 --- !u!114 &297747500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,6 +520,10 @@ PrefabInstance:
     - target: {fileID: 1456560932118691996, guid: 046c89c34d6d5d542b672fe136e18ba5, type: 3}
       propertyPath: sceneId
       value: 4074294377
+      objectReference: {fileID: 0}
+    - target: {fileID: 3734259665622256159, guid: 046c89c34d6d5d542b672fe136e18ba5, type: 3}
+      propertyPath: sceneId
+      value: 2337732613
       objectReference: {fileID: 0}
     - target: {fileID: 4396935103818767267, guid: 046c89c34d6d5d542b672fe136e18ba5, type: 3}
       propertyPath: m_Name
