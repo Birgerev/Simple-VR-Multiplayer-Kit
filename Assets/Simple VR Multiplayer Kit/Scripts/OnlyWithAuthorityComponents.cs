@@ -11,7 +11,7 @@ public class OnlyWithAuthorityComponents : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        //Get the network identity on current or parent objects
+        //Get the network identity on current object or its parents
         _identity = GetComponentInParent<NetworkIdentity>();
     }
 
