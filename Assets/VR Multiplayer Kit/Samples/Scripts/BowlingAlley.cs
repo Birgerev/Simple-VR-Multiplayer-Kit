@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Mirror;
 using UnityEngine;
@@ -10,24 +11,51 @@ public class BowlingAlley : NetworkBehaviour
 {
     public Transform[] pinSpawns;
     public GameObject pinPrefab;
-    [Space]
+    [Space] 
     public Transform[] ballSpawns;
     public GameObject ballPrefab;
     [Space] 
     public float animationDelaySeconds;
-    
-    private readonly List<GameObject> _trackedObjects = new();
+
+    public BoxCollider ballResetTrigger;
+
+    private readonly List<GameObject> _trackedPins = new();
+    private readonly List<GameObject> _trackedBalls = new();
 
     private void Start()
     {
+        if (!isServer)
+            return;
+        
         //Reset alley when game starts
-        if (isServer)
-            ResetAlley();
+        ResetAlley();
     }
 
     private void Update()
     {
+        if (!isServer)
+            return;
+        if(AllBallsHaveReachedTrigger())
+            ResetAlley();
+    }
+
+    private bool AllBallsHaveReachedTrigger()
+    {
+        // Create Bounds based on the ballResetTrigger's center and size
+        Bounds ballBounds = new Bounds(
+            transform.position + ballResetTrigger.center, 
+            ballResetTrigger.size);
+
+        // Iterate through each tracked ball
+        foreach (GameObject ball in _trackedBalls)
+        {
+            // Check if the ball's position is not within the ballBounds
+            if (!ballBounds.Contains(ball.transform.position))
+                return false; // Return false if any ball is outside the bounds
+        }
         
+        //If all tracked balls were inside, return true
+        return true;
     }
 
 
@@ -35,15 +63,17 @@ public class BowlingAlley : NetworkBehaviour
     private async void ResetAlley()
     {
         GetComponent<NetworkAnimator>().SetTrigger("Reset Arm");
-        
+
         //Await milliseconds for animations
-        await Task.Delay((int)(animationDelaySeconds*1000));
-        
+        await Task.Delay((int)(animationDelaySeconds * 1000));
+
         //Clear old objects
-        foreach (GameObject obj in _trackedObjects)
+        foreach (GameObject obj in _trackedPins.Concat(_trackedBalls))
         {
             NetworkServer.Destroy(obj);
         }
+        _trackedPins.Clear();
+        _trackedBalls.Clear();
 
         //Pin Spawning
         foreach (Transform spawn in pinSpawns)
@@ -52,11 +82,11 @@ public class BowlingAlley : NetworkBehaviour
             GameObject obj = Instantiate(pinPrefab, spawn.position, spawn.rotation);
             //Spawn object on network
             NetworkServer.Spawn(obj);
-            
+
             //Track spawned objects so we can destroy them later
-            _trackedObjects.Add(obj);
+            _trackedPins.Add(obj);
         }
-        
+
         //Ball Spawning
         foreach (Transform spawn in ballSpawns)
         {
@@ -64,9 +94,9 @@ public class BowlingAlley : NetworkBehaviour
             GameObject obj = Instantiate(ballPrefab, spawn.position, spawn.rotation);
             //Spawn object on network
             NetworkServer.Spawn(obj);
-            
+
             //Track spawned objects so we can destroy them later
-            _trackedObjects.Add(obj);
+            _trackedBalls.Add(obj);
         }
     }
 }
