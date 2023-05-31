@@ -21,6 +21,7 @@ public class BowlingAlley : NetworkBehaviour
 
     private readonly List<GameObject> _trackedPins = new();
     private readonly List<GameObject> _trackedBalls = new();
+    private bool _isResetting;
 
     private void Start()
     {
@@ -35,22 +36,18 @@ public class BowlingAlley : NetworkBehaviour
     {
         if (!isServer)
             return;
-        if(AllBallsHaveReachedTrigger())
+        
+        if(AllBallsHaveReachedTrigger() && !_isResetting)
             ResetAlley();
     }
 
     private bool AllBallsHaveReachedTrigger()
     {
-        // Create Bounds based on the ballResetTrigger's center and size
-        Bounds ballBounds = new Bounds(
-            transform.position + ballResetTrigger.center, 
-            ballResetTrigger.size);
-
         // Iterate through each tracked ball
         foreach (GameObject ball in _trackedBalls)
         {
             // Check if the ball's position is not within the ballBounds
-            if (!ballBounds.Contains(ball.transform.position))
+            if (!ballResetTrigger.bounds.Contains(ball.transform.position))
                 return false; // Return false if any ball is outside the bounds
         }
         
@@ -62,6 +59,7 @@ public class BowlingAlley : NetworkBehaviour
     [Server]
     private async void ResetAlley()
     {
+        _isResetting = true;
         GetComponent<NetworkAnimator>().SetTrigger("Reset Arm");
 
         //Await milliseconds for animations
@@ -98,5 +96,6 @@ public class BowlingAlley : NetworkBehaviour
             //Track spawned objects so we can destroy them later
             _trackedBalls.Add(obj);
         }
+        _isResetting = false;
     }
 }
