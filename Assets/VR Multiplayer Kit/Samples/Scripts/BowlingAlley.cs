@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 
 [RequireComponent(typeof(NetworkAnimator))]
-public class DemoBowlingAlley : NetworkBehaviour
+public class BowlingAlley : NetworkBehaviour
 {
     public Transform[] pinSpawns;
     public GameObject pinPrefab;
@@ -20,46 +20,52 @@ public class DemoBowlingAlley : NetworkBehaviour
 
     private void Start()
     {
-        if(isServer)
+        //Reset alley when game starts
+        if (isServer)
             ResetAlley();
     }
 
+    private void Update()
+    {
+        
+    }
+
+
     [Server]
-    public async void ResetAlleyButton()
+    private async void ResetAlley()
     {
         GetComponent<NetworkAnimator>().SetTrigger("Reset Arm");
         
         //Await milliseconds for animations
         await Task.Delay((int)(animationDelaySeconds*1000));
-
-        ResetAlley();
-    }
-    
-    
-    [Server]
-    private void ResetAlley()
-    {
+        
         //Clear old objects
         foreach (GameObject obj in _trackedObjects)
         {
             NetworkServer.Destroy(obj);
         }
 
-        //Spawn new pins
+        //Pin Spawning
         foreach (Transform spawn in pinSpawns)
         {
+            //Spawn new pins
             GameObject obj = Instantiate(pinPrefab, spawn.position, spawn.rotation);
+            //Spawn object on network
             NetworkServer.Spawn(obj);
             
+            //Track spawned objects so we can destroy them later
             _trackedObjects.Add(obj);
         }
         
-        //Spawn new balls
+        //Ball Spawning
         foreach (Transform spawn in ballSpawns)
         {
+            //Spawn new balls
             GameObject obj = Instantiate(ballPrefab, spawn.position, spawn.rotation);
+            //Spawn object on network
             NetworkServer.Spawn(obj);
             
+            //Track spawned objects so we can destroy them later
             _trackedObjects.Add(obj);
         }
     }
