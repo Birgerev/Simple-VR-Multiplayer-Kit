@@ -5,23 +5,27 @@ using Mirror;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(BoxCollider))]
-public class BasketballRange : NetworkBehaviour
+namespace VRMultiplayerStarterKit.Samples
 {
-    public Text scoreText;
-    [Space]
-    [SyncVar] public int score;
+    [RequireComponent(typeof(BoxCollider))]
+    public class BasketballRange : NetworkBehaviour
+    {
+        public Text scoreText;
+        [Space]
+        [SyncVar] public int score;
     
 
-    // Update is called once per frame
-    void Update()
-    {
-        scoreText.text = score.ToString();
+        // Update is called once per frame
+        void Update()
+        {
+            scoreText.text = score.ToString();
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            //When object enters hoop
+            score++;
+        }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        //When object enters hoop
-        score++;
-    }
 }

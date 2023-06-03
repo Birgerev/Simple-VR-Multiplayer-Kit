@@ -3,25 +3,28 @@ using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
 
-public class OnlyAuthorityComponents : MonoBehaviour
+namespace VRMultiplayerStarterKit
 {
-    public List<Behaviour> authorityComponents;
-    private NetworkIdentity _identity;
-
-    // Start is called before the first frame update
-    void Awake()
+    public class OnlyAuthorityComponents : MonoBehaviour
     {
-        //Get the network identity on current object or its parents
-        _identity = GetComponentInParent<NetworkIdentity>();
-    }
+        public List<Behaviour> authorityComponents;
+        private NetworkIdentity _identity;
 
-    // Update is called once per frame
-    void Update()
-    {
-        //Every frame, enable/disable components depending on whether client has authority
-        foreach (var component in authorityComponents)
+        // Start is called before the first frame update
+        void Awake()
         {
-            component.enabled = _identity.isOwned;
+            //Get the network identity on current object or its parents
+            _identity = GetComponentInParent<NetworkIdentity>();
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            //Every frame, enable/disable components depending on whether client has authority
+            foreach (var component in authorityComponents)
+            {
+                component.enabled = _identity.isOwned;
+            }
         }
     }
 }

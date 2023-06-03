@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace HapticPatterns.Samples
+namespace VRMultiplayerStarterKit
 {
     public class AnimateHandOnInput : MonoBehaviour
     {
