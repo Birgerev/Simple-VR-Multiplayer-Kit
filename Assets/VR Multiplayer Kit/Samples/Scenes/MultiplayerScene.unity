@@ -980,18 +980,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MultiplayerManager
       objectReference: {fileID: 0}
-    - target: {fileID: 4129560785318270388, guid: c41a2b1c5ec96d041a76f83db4e5a306, type: 3}
-      propertyPath: spawnPrefabs.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4129560785318270388, guid: c41a2b1c5ec96d041a76f83db4e5a306, type: 3}
-      propertyPath: spawnPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 5020287055402425606, guid: 04f177bb78d8f944da68168a6512627f, type: 3}
-    - target: {fileID: 4129560785318270388, guid: c41a2b1c5ec96d041a76f83db4e5a306, type: 3}
-      propertyPath: spawnPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 5239436241437963824, guid: 1f57278db052ace4aac0d448d344780b, type: 3}
     - target: {fileID: 4129560785318270389, guid: c41a2b1c5ec96d041a76f83db4e5a306, type: 3}
       propertyPath: m_RootOrder
       value: 2

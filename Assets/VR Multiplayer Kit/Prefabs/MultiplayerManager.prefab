@@ -60,7 +60,9 @@ MonoBehaviour:
   playerPrefab: {fileID: 4396935103818767267, guid: 046c89c34d6d5d542b672fe136e18ba5, type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
-  spawnPrefabs: []
+  spawnPrefabs:
+  - {fileID: 5020287055402425606, guid: 04f177bb78d8f944da68168a6512627f, type: 3}
+  - {fileID: 5239436241437963824, guid: 1f57278db052ace4aac0d448d344780b, type: 3}
   snapshotSettings:
     bufferTimeMultiplier: 2
     catchupNegativeThreshold: -1
@@ -84,7 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0fecffa3f624585964b0d0eb21b18e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  port: 7777
+  port: 630
   DualMode: 1
   NoDelay: 1
   Interval: 10
