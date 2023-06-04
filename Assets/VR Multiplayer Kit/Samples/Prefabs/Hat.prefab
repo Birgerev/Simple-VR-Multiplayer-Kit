@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9077501378281486674}
   - component: {fileID: 4691862452766823563}
   - component: {fileID: 7337663145900949811}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,6 +328,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 89c506831d242f743ad17e61f30d1033, type: 3}
       propertyPath: m_Name
       value: hat model
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 89c506831d242f743ad17e61f30d1033, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89c506831d242f743ad17e61f30d1033, type: 3}

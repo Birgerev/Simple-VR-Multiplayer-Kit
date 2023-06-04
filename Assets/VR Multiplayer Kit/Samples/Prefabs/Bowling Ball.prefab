@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5998617738342060485}
   - component: {fileID: 7141134366105279224}
   - component: {fileID: 8419570784085599851}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bowling Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -335,7 +335,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3827485729811007593}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}

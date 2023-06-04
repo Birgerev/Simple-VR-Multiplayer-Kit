@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 768139829984095821}
   - component: {fileID: 953340800433614051}
   - component: {fileID: 7099425824688096695}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 5048414642292638354}
   - component: {fileID: 8857042511794089803}
   - component: {fileID: 6783209350418348787}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BowlingPin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 8019466049757704331}
   - component: {fileID: 1992885739601569484}
   - component: {fileID: 4861848826046577139}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,7 +451,7 @@ GameObject:
   - component: {fileID: 398739760322704121}
   - component: {fileID: 2257499719524378723}
   - component: {fileID: 9214128486275825714}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -532,7 +532,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7197100663359911803}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
