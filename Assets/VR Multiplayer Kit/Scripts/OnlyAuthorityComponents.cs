@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace VRMultiplayerStarterKit
 {
+    /// <summary>
+    /// Script used to disable certain components if we don't have network authority over the object
+    /// </summary>
     public class OnlyAuthorityComponents : MonoBehaviour
     {
         public List<Behaviour> authorityComponents;
@@ -21,9 +24,10 @@ namespace VRMultiplayerStarterKit
         void Update()
         {
             //Every frame, enable/disable components depending on whether client has authority
+            bool enableComponents = _identity.isOwned;
             foreach (var component in authorityComponents)
             {
-                component.enabled = _identity.isOwned;
+                component.enabled = enableComponents;
             }
         }
     }

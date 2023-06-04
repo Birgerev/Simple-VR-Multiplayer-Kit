@@ -18,12 +18,13 @@ namespace VRMultiplayerStarterKit.Samples
         // Update is called once per frame
         void Update()
         {
+            //Update the UI text to match current score
             scoreText.text = score.ToString();
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            //When object enters hoop
+            //Whenever object enters hoop, add a point
             score++;
         }
     }
