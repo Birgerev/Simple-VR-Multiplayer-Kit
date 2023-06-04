@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/VR Multiplayer Kit/Samples/Scenes/MultiplayerScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 96643cbfda70ff74384e69b6ed5911d2, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 0a15e0bfa65c4904bbab56c6fb1973dd, type: 2}
