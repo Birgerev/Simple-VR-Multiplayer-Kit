@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 7916997368619799241}
   - component: {fileID: 6510753741883170689}
   m_Layer: 7
-  m_Name: Mupliplayer VR Player
+  m_Name: Multiplayer VR Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -298,7 +298,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
-  m_Radius: 0.2
+  m_Radius: 0.1
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
