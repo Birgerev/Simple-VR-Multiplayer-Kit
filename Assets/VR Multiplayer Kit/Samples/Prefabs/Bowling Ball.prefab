@@ -107,7 +107,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5239436241437963839}
   - component: {fileID: 3454010908820118546}
-  - component: {fileID: 4807957053611267074}
   - component: {fileID: 5239436241437963827}
   - component: {fileID: 5409387908682262948}
   - component: {fileID: 8644407451525989501}
@@ -271,19 +270,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!135 &4807957053611267074
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5239436241437963824}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: -0.00000011920929, y: -0.0000009536743, z: 0}
 --- !u!54 &5239436241437963827
 Rigidbody:
   m_ObjectHideFlags: 0
