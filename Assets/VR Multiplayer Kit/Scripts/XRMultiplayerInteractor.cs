@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Mirror;
@@ -16,22 +17,32 @@ namespace VRMultiplayerStarterKit
         // Start is called before the first frame update
         void Start()
         {
-            //Only execute on our owned player
-            if (!isOwned)
-                return;
+            //Enable / Disable all interactors, depending on whether if we own them or not
+            foreach (var interactor in GetOwnedInteractors())
+            {
+                interactor.enabled = isOwned;
+            }
             
-            //Register event listeners for whenever any interactor that is part of our XR Rig grabs something
-            RegisterInteractionListeners();
+            //Only execute on our owned player
+            if (isOwned)
+            {
+                //Register event listeners for whenever any interactor that is part of our XR Rig grabs something
+                RegisterInteractionListeners();
+            }
         }
-    
         private void RegisterInteractionListeners()
         {
             //Get all player interactors in children
-            foreach (var interactor in GetComponentsInChildren<XRBaseInteractor>())
+            foreach (var interactor in GetOwnedInteractors())
             {
                 //Listen for select events (when we grab objects)
                 interactor.selectEntered.AddListener(InteractorSelectEvent);
             }
+        }
+
+        private XRBaseInteractor[] GetOwnedInteractors()
+        {
+            return GetComponentsInChildren<XRBaseInteractor>();
         }
 
         /// <summary>

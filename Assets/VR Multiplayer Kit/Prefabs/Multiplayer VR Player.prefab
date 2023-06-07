@@ -799,7 +799,7 @@ GameObject:
   - component: {fileID: 4396935104500807154}
   - component: {fileID: 4396935104500807156}
   - component: {fileID: 4396935104500807157}
-  - component: {fileID: 6574897142533189903}
+  - component: {fileID: 36324275107785039}
   m_Layer: 0
   m_Name: LeftHand Controller
   m_TagString: Untagged
@@ -1100,7 +1100,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6574897142533189903
+--- !u!114 &36324275107785039
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1113,7 +1113,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   authorityComponents:
-  - {fileID: 4396935104500807156}
   - {fileID: 4396935104500807154}
 --- !u!1 &4396935104520876537
 GameObject:
@@ -1127,7 +1126,7 @@ GameObject:
   - component: {fileID: 4396935104520876540}
   - component: {fileID: 4396935104520876542}
   - component: {fileID: 4396935104520876543}
-  - component: {fileID: 2837443928766404912}
+  - component: {fileID: 743717856501885246}
   m_Layer: 0
   m_Name: RightHand Controller
   m_TagString: Untagged
@@ -1428,7 +1427,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2837443928766404912
+--- !u!114 &743717856501885246
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1441,7 +1440,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   authorityComponents:
-  - {fileID: 4396935104520876542}
   - {fileID: 4396935104520876540}
 --- !u!1 &6551178322460067025
 GameObject:
