@@ -990,6 +990,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MultiplayerManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4129560785318270387, guid: c41a2b1c5ec96d041a76f83db4e5a306, type: 3}
+      propertyPath: offsetX
+      value: 1648
+      objectReference: {fileID: 0}
+    - target: {fileID: 4129560785318270387, guid: c41a2b1c5ec96d041a76f83db4e5a306, type: 3}
+      propertyPath: offsetY
+      value: -28
+      objectReference: {fileID: 0}
     - target: {fileID: 4129560785318270389, guid: c41a2b1c5ec96d041a76f83db4e5a306, type: 3}
       propertyPath: m_RootOrder
       value: 2
