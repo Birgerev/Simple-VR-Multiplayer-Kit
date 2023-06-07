@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8857042511794089803}
   - component: {fileID: 6783209350418348787}
   m_Layer: 6
-  m_Name: Cube
+  m_Name: Physics Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
