@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e6292b2c06870d4495f009f912b9600, type: 3}
-  m_Name: Throw
+  m_Name: Throw PP
   m_EditorClassIdentifier: 
   settings:
   - {fileID: -8335505957437986869}
