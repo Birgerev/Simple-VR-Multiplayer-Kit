@@ -6,7 +6,7 @@ We'd love if you'd share your games there as well!
 
 
 BEFORE YOU START
-- Install following packages: "XR Interaction Toolkit", "OpenXR Plugin"
+- Install following packages: "XR Interaction Toolkit", "OpenXR Plugin", "Mirror"
 - Set up your OpenXR input devices in Project Settings
 - Make sure you set up "Player" & "Grabbable" layers like in "physics layers.png". They must have same layer ids
 
